@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}! {{ user.email }}
+  <p><a href="{% url 'logout' %}">logout</a></p>
+  <p><a href="{% url 'index' %}">list incoming mails</a></p>
+  <p><a href="{% url 'outmessages' %}">list outgoing mails</a></p>
+  <a href="{% url 'mail_new' %}" >Send new Email</a>
+{% else %}
+  <p>You are not logged in</p>
+  <p>username ranges from test1, test2,... , test10</p>
+  <p>password is normaluser</p>
+  <p>Valid email id for this application are as follows test1@test.com, test2@test.com, ..... , test10@test.com</p>
+  <p>For multiple to emails please use comma separated values only</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
+
+
+{% endblock %}
