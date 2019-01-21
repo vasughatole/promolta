@@ -17,3 +17,11 @@ Note: the default homepage is at localhost:8000
       the admin page is at localhost:8000/admin
       admin username is vasu
       admin password is superuser
+...............................................................................................
+
+If there are dependency issues while running the project do the following
+    Create a virtual environment and install dependencies
+      cd assignment/
+      virtualenv venv -p python3.6 
+      source venv/bin/activate
+      pip install -r requirements.txt
